@@ -10,7 +10,35 @@
 </head>
 
 <body>
-
+    <button id="add-book">Add Book</button>
+    <div id="form-modal" class="hidden">
+        <div class="modal-content">
+            <h2>Add a Book</h2>
+            <form id="book-form">
+                <label>
+                    Title
+                    <input type="text" name="title" required>
+                </label>
+                <label>
+                    Author
+                    <input type="text" name="author" required>
+                </label>
+                <label>
+                    Pages
+                    <input type="number" name="pages" min="1" required>
+                </label>
+                <label class="checkbox-row">
+                    <input type="checkbox" name="read">
+                    Already read
+                </label>
+                <div class="actions">
+                    <button type="submit">Save</button>
+                    <button type="button" id="cancel-form" class="secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="library-container"></div>
 </body>
 
 </html>

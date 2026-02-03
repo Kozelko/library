@@ -30,6 +30,15 @@ class LibraryApp {
             this.handleSubmit();
         });
 
+        // Vlastná validačná hláška pre autora
+        const authorInput = this.form?.querySelector('input[name="author"]');
+        authorInput?.addEventListener('invalid', () => {
+            authorInput.setCustomValidity('The author name must be filled!');
+        });
+        authorInput?.addEventListener('input', () => {
+            authorInput.setCustomValidity('');
+        });
+
         this.cardsContainer?.addEventListener('click', (event) => {
             const target = event.target;
             if (!(target instanceof HTMLElement)) return;
